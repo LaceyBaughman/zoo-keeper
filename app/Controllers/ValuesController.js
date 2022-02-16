@@ -12,11 +12,18 @@ function _draw() {
   <div class="my-3">
     <button class="btn btn-secondary text-white elevation-2" onclick="app.valuesController.addValue()">Add Value</button>  
     <div class="values d-flex flex-wrap my-3">
+    <button class="btn btn-secondary text-white elevation-2" onclick="app.models.animals">Add Value</button>  
+    <div class="values d-flex flex-wrap my-3">
+
+
+
       ${cardsTemplate}
     </div>
   </div>
   `
 }
+
+//Fix my button
 
 //Public
 export class ValuesController {
@@ -29,6 +36,9 @@ export class ValuesController {
     valuesService.addValue()
   }
 
+  sayHelloToAnimals() {
+    valuesService.sayHelloToAnimals()
+  }
   async removeValue(id) {
     const yes = await Pop.confirm('Remove Value')
     if (yes) {
